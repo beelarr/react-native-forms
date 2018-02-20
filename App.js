@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { View, StyleSheet, Button } from "react-native";
+import React, { Component } from 'react';
+import { View, StyleSheet, Button } from 'react-native';
 
-import t from "tcomb-form-native";
+import t from 'tcomb-form-native';
 
 const Form = t.form.Form;
 
@@ -12,20 +12,27 @@ const User = t.struct({
   terms: t.Boolean
 });
 
-
+const options = {
+  fields: {
+    terms: {
+      label: 'Agree to Terms'
+    },
+    username: {
+      label: 'Your username - Avoid Snarkey'
+    }
+  }
+};
 
 export default class App extends Component {
-
-    handleSubmit = () => {
-        const value = this._form.getValue();
-        console.log('Value', value);
-    };
-
+  handleSubmit = () => {
+    const value = this._form.getValue();
+    console.log('Value', value);
+  };
 
   render() {
     return (
       <View style={styles.container}>
-        <Form type={User} ref={c => (this._form = c)} />
+        <Form type={User} ref={c => (this._form = c)} options={options} />
         <Button title="Sign Up!" onPress={this.handleSubmit} />
       </View>
     );
@@ -34,16 +41,16 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
+    justifyContent: 'center',
     marginTop: 50,
     padding: 20,
-    backgroundColor: "#ffffff"
+    backgroundColor: '#ffffff'
   },
   paragraph: {
     margin: 24,
     fontSize: 18,
-    fontWeight: "bold",
-    textAlign: "center",
-    color: "#34495e"
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#34495e'
   }
 });
