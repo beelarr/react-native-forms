@@ -14,6 +14,12 @@ const User = t.struct({
 
 const options = {
   fields: {
+    email: {
+      error: 'When you forget your password we will not be able to help'
+    },
+    password: {
+      error: "Choose something you'll actually remember"
+    },
     terms: {
       label: 'Agree to Terms'
     },
