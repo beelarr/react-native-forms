@@ -39,7 +39,8 @@ const options = {
     },
     password: {
       error: "Choose something you'll actually remember",
-      secureTextEntry: true
+      secureTextEntry: true,
+      help: '6 characters of any combination'
     },
     terms: {
       label: 'Agree to Terms'
