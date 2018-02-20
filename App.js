@@ -31,6 +31,7 @@ const formStyles = {
 };
 
 const options = {
+  order: ['username', 'email', 'password', 'terms'],
   auto: 'placeholders',
   fields: {
     email: {
