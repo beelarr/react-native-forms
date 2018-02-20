@@ -12,13 +12,32 @@ const User = t.struct({
   terms: t.Boolean
 });
 
+const formStyles = {
+  ...Form.stylesheet,
+  controlLabel: {
+    normal: {
+      color: 'blue',
+      fontSize: 18,
+      marginBottom: 7,
+      fontWeight: '600'
+    },
+    error: {
+      color: 'red',
+      fontSize: 18,
+      marginBottom: 7,
+      fontWeight: '600'
+    }
+  }
+};
+
 const options = {
   fields: {
     email: {
       error: 'When you forget your password we will not be able to help'
     },
     password: {
-      error: "Choose something you'll actually remember"
+      error: "Choose something you'll actually remember",
+      secureTextEntry: true
     },
     terms: {
       label: 'Agree to Terms'
@@ -26,7 +45,8 @@ const options = {
     username: {
       label: 'Your username - Avoid Snarkey'
     }
-  }
+  },
+  stylesheet: formStyles
 };
 
 export default class App extends Component {
