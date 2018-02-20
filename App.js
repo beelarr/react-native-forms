@@ -31,6 +31,7 @@ const formStyles = {
 };
 
 const options = {
+  auto: 'placeholders',
   fields: {
     email: {
       error: 'When you forget your password we will not be able to help'
@@ -41,9 +42,6 @@ const options = {
     },
     terms: {
       label: 'Agree to Terms'
-    },
-    username: {
-      label: 'Your username - Avoid Snarkey'
     }
   },
   stylesheet: formStyles
