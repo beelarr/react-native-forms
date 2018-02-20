@@ -9,7 +9,8 @@ const User = t.struct({
   email: t.String,
   username: t.maybe(t.String),
   password: t.String,
-  terms: t.Boolean
+  terms: t.Boolean,
+  birthdate: t.Date
 });
 
 const formStyles = {
@@ -31,7 +32,7 @@ const formStyles = {
 };
 
 const options = {
-  order: ['username', 'email', 'password', 'terms'],
+  order: ['username', 'email', 'password', 'birthdate', 'terms'],
   auto: 'placeholders',
   fields: {
     email: {
@@ -44,6 +45,9 @@ const options = {
     },
     terms: {
       label: 'Agree to Terms'
+    },
+    birthdate: {
+      label: 'Enter your birthdate'
     }
   },
   stylesheet: formStyles
