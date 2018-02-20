@@ -7,16 +7,21 @@ const Form = t.form.Form;
 
 const User = t.struct({
   email: t.String,
-  username: t.String,
+  username: t.maybe(t.String),
   password: t.String,
   terms: t.Boolean
 });
 
-handleSubmit = () => {
-  const value = this._form.getValue();
-};
+
 
 export default class App extends Component {
+
+    handleSubmit = () => {
+        const value = this._form.getValue();
+        console.log('Value', value);
+    };
+
+
   render() {
     return (
       <View style={styles.container}>
