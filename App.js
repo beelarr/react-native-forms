@@ -23,7 +23,7 @@ const formStyles = {
       fontWeight: '600'
     },
     error: {
-      color: 'dark-red',
+      color: 'red',
       fontSize: 18,
       marginBottom: 7,
       fontWeight: '600'
